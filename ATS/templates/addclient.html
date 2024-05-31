@@ -1,0 +1,22 @@
+{% extends 'adminhome.html' %}
+
+{% block 'body' %}
+
+<h2 align="center" style="color:red">{{msg}}</h2><br>
+<h3 align="center"><u>Add Client</u></h3>
+<br>
+<form method="post" action="{% url 'insertclient' %}">
+    {% csrf_token %}
+    <table align="center" width="70%" height="20%">
+        <tr>
+            <td><label>Enter Client Name</label></td>
+            <td>
+                <input type="text" name="client" required>
+            </td>
+        </tr>
+        <tr><td><input type="submit" value="Add" class="button"></td>
+            <td><input type="reset" value="Clear" class="button"></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

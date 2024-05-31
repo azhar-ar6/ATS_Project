@@ -1,0 +1,69 @@
+{% extends 'employeehome.html' %}
+
+{% block 'body' %}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<h3 align="center"><u>Edit Job Posting</u></h3><br>
+<form method="post" action="{% url 'jobpostingediting' job_id=jobposting.job_id %}">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="job_title">Job Title:</label>
+        <input type="text" class="form-control" id="job_title" name="job_title" value="{{ jobposting.job_title }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="location" name="location" value="{{ jobposting.location }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="exp_min">Min. Experience:</label>
+        <input type="number" class="form-control" id="exp_min" name="exp_min" value="{{ jobposting.exp_min }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="exp_max">Max. Experience:</label>
+        <input type="number" class="form-control" id="exp_max" name="exp_max" value="{{ jobposting.exp_max }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="interview_mode">Interview Mode:</label>
+        <input type="text" class="form-control" id="interview_mode" name="interview_mode" value="{{ jobposting.interview_mode }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="client">Client:</label>
+        <input type="text" class="form-control" id="client" name="client" value="{{ jobposting.client }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="end_client">End Client:</label>
+        <input type="text" class="form-control" id="end_client" name="end_client" value="{{ jobposting.end_client }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="salary_offer">Salary offer:</label>
+        <input type="number" class="form-control" id="salary_offer" name="salary_offer" value="{{ jobposting.salary_offer }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="budget_from_client">Budget from client:</label>
+        <input type="number" class="form-control" id="budget_from_client" name="budget_from_client" value="{{ jobposting.budget_from_client }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="position_type">Position Type:</label>
+        <input type="text" class="form-control" id="position_type" name="position_type" value="{{ jobposting.position_type }}" required>
+    </div>
+
+    <div class="form-group">
+        <label for="job_description">Description:</label>
+        <textarea class="form-control" id="job_description" name="job_description" rows="4" required>{{ jobposting.job_description }}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Job Posting</button>
+</form>
+
+{% endblock %}

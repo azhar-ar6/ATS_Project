@@ -1,0 +1,20 @@
+{% extends 'adminhome.html' %}
+
+{% block 'body' %}
+<center>
+    <button>
+    <a href="{% url 'addemployee' %}">Add Employee</a>
+    </button>
+    <button>
+    <a href="{% url 'viewemployee' %}">View All Employees</a>
+    </button>
+    <button>
+    <a href="">Update Employee</a>
+    </button>
+    <button>
+    <a href="{% url 'deleteemployee' %}">Delete Employee</a>
+    </button>
+</center>
+<p>I am in Admin Employee Page</p>
+
+{% endblock %}

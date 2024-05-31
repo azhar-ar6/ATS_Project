@@ -1,0 +1,102 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0px #ccc;
+            margin: 20px auto; /* Center the container */
+            width: 40%; /* Adjust the width as needed */
+        }
+
+        h2 {
+            text-align: center;
+            color: black;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Application Tracking System</h2><br>
+
+<nav class="navbar">
+    <div class="logo">ATS</div>
+    <ul class="nav-links">
+        <div class="menu">
+            <li><a href="{% url 'company' %}">Home</a></li>&nbsp;&nbsp;&nbsp;
+            <li><a href="{% url 'about' %}">About</a></li>&nbsp;&nbsp;&nbsp;
+        </div>
+    </ul>
+</nav>
+<br><br>
+
+{% block 'body' %}
+
+<!-- Company Name Form Section -->
+<div class="container">
+    <h2>Enter Company Name</h2><br>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+
+            <input type="text" class="form-control" id="company_name" name="company_name" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+    {% if messages %}
+        <div class="alert alert-danger mt-3">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+       <!-- Bootstrap JS and jQuery (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

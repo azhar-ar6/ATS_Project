@@ -1,0 +1,52 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATS</title>
+<link type="text/css" rel="stylesheet" href="{% static 'css/adminstyle.css' %}"/>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body bgcolor="lightgrey">
+
+<h2 align="center">Application Tracking System</h2>
+
+<nav class="navbar">
+    <div class="logo">ATS</div>
+    <ul class="nav-links">
+        <div class="menu">
+            <a href="{% url 'employeehome' %}">Home</a>&nbsp;&nbsp;&nbsp;
+            <li class="services">
+                <a href="#">Job Posting</a>
+                <ul class="dropdown">
+                    <li><a href="{% url 'viewjobposting' %}">Job Postings</a></li>&nbsp;&nbsp;&nbsp;
+                    <li><a href="{% url 'jobposting' %}">New Job Posting</a></li>&nbsp;&nbsp;&nbsp;
+                    <li><a href="{% url 'deletejobposting' %}">Edit Job Posting</a></li>&nbsp;&nbsp;&nbsp;
+                </ul>
+            </li>
+<a href="{% url 'viewclient1' %}">Clients</a>&nbsp;&nbsp;&nbsp;
+<a href="{% url 'jobposting' %}">Candidates</a>&nbsp;&nbsp;&nbsp;
+<a href="{% url 'jobposting' %}">Interviews</a>&nbsp;&nbsp;&nbsp;
+<a href="{% url 'jobposting' %}">Confirmation</a>&nbsp;&nbsp;&nbsp;
+<a href="#">View Applicants</a>&nbsp;&nbsp;&nbsp;
+<a href="{% url 'empchangepwd' %}">Change Password</a>&nbsp;&nbsp;&nbsp;
+<a href="{% url 'emplogout' %}">Logout</a>&nbsp;&nbsp;&nbsp;
+        </div>
+    </ul>
+</nav>
+&nbsp;&nbsp;&nbsp;
+<h3 align="right" style="color:green"><i>Welcome {{euname}}</i></h3>
+
+<br><br>
+
+{% block 'body' %}
+
+<p>I am in Employee Home Page</p>
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'adminhome.html' %}
+
+{% block 'body' %}
+<center>
+    <button>
+    <a href="{% url 'addclient' %}">Add Client</a>
+    </button>
+    <button>
+    <a href="{% url 'viewclient' %}">View All Clients</a>
+    </button>
+    <button>
+    <a href="">Update Client</a>
+    </button>
+    <button>
+    <a href="{% url 'deleteclient' %}">Delete Client</a>
+    </button>
+</center>
+<p>I am in Company Page</p>
+
+{% endblock %}

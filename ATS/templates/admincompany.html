@@ -1,0 +1,20 @@
+{% extends 'adminhome.html' %}
+
+{% block 'body' %}
+<center>
+    <button>
+    <a href="{% url 'addcompany' %}">Add Company</a>
+    </button>
+    <button>
+    <a href="{% url 'viewcompany' %}">View All Companies</a>
+    </button>
+    <button>
+    <a href="">Update Company</a>
+    </button>
+    <button>
+    <a href="{% url 'deletecompany' %}">Delete Company</a>
+    </button>
+</center>
+<p>I am in Company Page</p>
+
+{% endblock %}

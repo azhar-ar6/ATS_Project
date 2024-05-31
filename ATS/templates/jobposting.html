@@ -1,0 +1,21 @@
+{% extends 'employeehome.html' %}
+
+{% block 'body' %}
+
+<h2 align="center" style="color:red">{{message}}</h2>
+
+<div class="container mt-4">
+  <h2 align="center" style="color:Blue">Create Job</h2><br>
+  <form method="post" align="center" action="{% url 'jobposting' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  {% if form.errors %}
+    <div style="color: red;">
+      Form has errors: {{ form.errors }}
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
