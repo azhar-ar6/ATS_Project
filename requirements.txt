@@ -1,0 +1,15 @@
+# pip version
+pip==24.0
+
+# Django and essential dependencies
+Django==4.2.0
+djangorestframework==3.14.0  # For building REST APIs
+gunicorn==20.1.0  # WSGI HTTP Server for Unix
+
+# MySQL database adapter for Python
+mysqlclient==2.1.1
+
+# Additional dependencies
+django-cors-headers==3.14.0  # For handling Cross-Origin Resource Sharing (CORS)
+django-environ==0.10.0  # For environment variable management
+Pillow==9.3.0  # For image processing
