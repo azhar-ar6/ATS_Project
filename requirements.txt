@@ -2,7 +2,7 @@
 pip==24.0
 
 # Django and essential dependencies
-Django==4.2.0
+Django==4.2.7
 djangorestframework==3.14.0  # For building REST APIs
 gunicorn==20.1.0  # WSGI HTTP Server for Unix
 
